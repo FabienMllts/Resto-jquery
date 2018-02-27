@@ -17,32 +17,51 @@ function openTab(evt, tabName) {
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
-} 
+}
 
+//Carousel
 
+/* tentative de carousel auto 
 $(document).ready(function(){
     // Set the interval to be 5 seconds
     var t = setInterval(function(){
-        $("#carousel ul").animate({marginLeft:-480},1000,function(){
-            $(this).find("li:last").after($(this).find("li:first"));
+        $(".slideshow-container").animate({marginLeft:-480},1000,function(){
+            $(this).find("div:last").after($(this).find("div:first"));
             $(this).css({marginLeft:0});
         })
-    },5000);
-});
+    },3000);
+}); */
 
- $right.on('click', function() {
-    $('#carousel  > li:first')
-    .fadeOut(1000)
-    .next()
-    .fadeIn(1000)
-    .end()
-    .appendTo('#carousel');
-});
 
-$left.on('click', function() {
-    $('#carousel  > li:first')
-    .fadeOut(1000)
-    $('#carousel > li:last')
-    .fadeIn(1000)
-    .prependTo('#carousel ul');
-});
+var slideIndex = 1;
+
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("myFood");
+  var dots = document.getElementsByClassName("dot");
+
+
+  if (n > slides.length) {slideIndex = 1} 
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"; 
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block"; 
+  dots[slideIndex-1].className += " active";
+}
+
+
+

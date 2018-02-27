@@ -1,40 +1,55 @@
 <div id="container">
 	<h1>Resto trop bon!</h1>
-	<p>Et c'est gratuit !</p>
-	<br>
+	<div class="foodshow-container">
+		<p> <%= image_tag 'arrowleft.png', class: "prev", onclick:"plusSlides(-1)"%> </p>
+		
+		<div class= 'myFood fade' style = "display:block">
+			<%= image_tag 'food.jpg'%>
+		</div>
+
+		<div class= 'myFood fade'>
+			<%= image_tag 'food1.jpg'%>
+		</div>
+
+		<div class= 'myFood fade'>
+			<%= image_tag 'food2.jpg'%>
+		</div>
+
+		<div class= 'myFood fade'>
+			<%= image_tag 'food3.jpg'%>
+		</div>
+
+		<p> <%= image_tag 'arrowright.png', class: "next", onclick:"plusSlides(1)"%> </p>
+	</div>
+
+	<div class="dots" style="text-align:center">
+		<span class="dot" onclick="currentSlide(1)"></span> 
+		<span class="dot" onclick="currentSlide(2)"></span> 
+		<span class="dot" onclick="currentSlide(3)"></span>
+		<span class="dot" onclick="currentSlide(4)"></span>  
+	</div>
 
 
+	<!-- Tab links -->
 	<div class="tab">
 		<button class="tablinks" onclick="openTab(event, 'Presentation')">Presentation</button>
 		<button class="tablinks" onclick="openTab(event, 'Menu')">Menu</button>
 		<button class="tablinks" onclick="openTab(event, 'Contact')">Contact</button>
-		<br><br><br><br><br>
 	</div>
 
-
+	<!-- Tab content -->
 	<div id="Presentation" class="tabcontent">
 		<h3>Presentation</h3>
-		
-		<div id="carousel">
-			<ul>
-				<li><img src="http://www.restaurant-badine.com/wp-content/uploads/2015/04/restaurant-gastronomique-grenoble-badine-plat-1.jpg"  alt="plat1", width="400px", height="155px"/></li>
-				<li><img src="http://www.le-morvan.fr/maj/images_resized/459-so-2012restaurant-phototable01-fr2.jpg"  alt="plat2", width="400px", height="155px"/></li>
-				<li><img src="https://www.odelices.com/images/recettes/tossolia_soupe_melon_toping_galette_indienne-776x1024.jpg"  alt="plat3", width="400px", height="155px"/></li>
-				<li><img src="https://thumbs.dreamstime.com/b/deer-back-gourmet-food-vegetables-white-plate-34425841.jpg"  alt="plat4", width="400px", height="155px"/></li>
-				<li><img src="https://img.grouponcdn.com/deal/eAdLDKQ3eJfzbYZD1aEB/7o-700x420/v1/c700x420.jpg"  alt="plat5", width="400px", height="155px"/></li>
-			</ul>
-		</div>
+		<p>Un super resto !! En plus c'est gratuit</p>
 	</div>
-	<div class="lr"><button id="left"><</button><button id="right">></button></div>
 
 	<div id="Menu" class="tabcontent">
 		<h3>Menu</h3>
-		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p> 
+		<p>Pleins de bonnes choses à manger</p>
 	</div>
 
 	<div id="Contact" class="tabcontent">
 		<h3>Contact</h3>
-		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
-	</div>
-
+		<p>Tu plonges et c'est la première à droite</p>
+	</div> 
 </div>
