@@ -30,4 +30,19 @@ $(document).ready(function(){
     },5000);
 });
 
+ $right.on('click', function() {
+    $('#carousel  > li:first')
+    .fadeOut(1000)
+    .next()
+    .fadeIn(1000)
+    .end()
+    .appendTo('#carousel');
+});
 
+$left.on('click', function() {
+    $('#carousel  > li:first')
+    .fadeOut(1000)
+    $('#carousel > li:last')
+    .fadeIn(1000)
+    .prependTo('#carousel ul');
+});
